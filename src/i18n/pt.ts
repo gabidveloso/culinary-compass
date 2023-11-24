@@ -77,7 +77,9 @@ const myAccount = {
   password: 'Palavra-passe',
   loginError: 'Palavra-passe invalida',
   okay: 'Continuar',
-  emailSent: 'Receberá um email para confirmar a alteração do email'
+  emailSent: 'Receberá um email para confirmar a alteração do email',
+  placeholderEmail: 'endereço de email',
+  placeholderUsername: 'nome de utilizador'
 }
 
 const discovery = {

@@ -78,7 +78,9 @@ const myAccount = {
   password: 'Password',
   loginError: 'Wrong password',
   okay: 'Okay',
-  emailSent: 'You will receive an email to confirm the change of email'
+  emailSent: 'You will receive an email to confirm the change of email',
+  placeholderEmail: 'email address',
+  placeholderUsername: 'username'
 }
 
 const discovery = {
