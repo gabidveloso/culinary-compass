@@ -1,85 +1,94 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView, useRouter } from 'vue-router'
+import { useAuthStore } from './stores/AuthStore'
+
+import { THE_BUTTON_VARIANTS } from './components/TheButton/TheButton.type'
+import TheHeader from './components/TheHeader/TheHeader.vue'
+import TheModal from './components/TheModal/TheModal.vue'
+import TheButton from './components/TheButton/TheButton.vue'
+import { ref } from 'vue'
+import { useReposStore } from './stores/ReposStore/ReposStore'
+
+const authStore = useAuthStore()
+const reposStore = useReposStore()
+const router = useRouter()
+
+const showModal = ref(false)
+
+const onShowModal = () => {
+  showModal.value = true
+}
+
+async function onLogout() {
+  showModal.value = false
+  await authStore.logout()
+
+  reposStore.reset()
+
+  router.push('/login')
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <TheHeader
+    :isLoggedIn="authStore.isLoggedIn"
+    @logout="onShowModal"
+    :userName="authStore.user?.displayName"
+    :menuItems="[
+      {
+        path: '/discovery',
+        name: $t('header.discovery')
+      }
+    ]"
+  />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+  <TheModal v-model:show="showModal">
+    <template #header>
+      <h2>{{ $t('header.modalTitle') }}</h2>
+    </template>
+    <template #body>
+      <p>{{ $t('header.modalDescription') }}</p></template
+    >
+    <template #footer>
+      <div class="modal-footer">
+        <TheButton
+          id="save-button"
+          :variant="THE_BUTTON_VARIANTS.TEXT"
+          type="submit"
+          @click="showModal = false"
+        >
+          {{ $t('header.modalCancel') }}
+        </TheButton>
+        <TheButton
+          id="save-button"
+          :variant="THE_BUTTON_VARIANTS.PRIMARY"
+          type="submit"
+          @click="onLogout"
+        >
+          {{ $t('header.modalConfirm') }}
+        </TheButton>
+      </div>
+    </template>
+  </TheModal>
 
   <RouterView />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style scoped lang="scss">
+h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--vt-c-purple);
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+p {
+  font-size: 14px;
+  margin-top: 0.8rem;
 }
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 2rem;
+  gap: 1rem;
 }
 </style>

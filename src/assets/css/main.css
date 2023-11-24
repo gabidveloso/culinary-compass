@@ -1,0 +1,66 @@
+@import './base.css';
+@import './reset.css';
+
+#app {
+  margin: 0 auto;
+  padding: 2rem 4rem;
+  overflow-x: hidden;
+  font-weight: normal;
+}
+
+/* vue transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 1. declare transition */
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  /* transition: all 2s ease-in-out; */
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+/* 2. declare enter from and leave to state */
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  /* transform: scaleY(0.01) translate(30px, 0); */
+}
+
+.list-enter-from img,
+.list-leave-to img {
+  opacity: 0;
+  /* transform: scaleY(0.01) translate(30px, 0); */
+}
+
+/* 3. ensure leaving items are taken out of layout flow so that moving
+      animations can be calculated correctly. */
+.list-leave-active {
+  position: absolute;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(237, 100%, 69%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(44.06deg 99.04% 59.02%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #app {
+    padding: 2rem;
+  }
+}
