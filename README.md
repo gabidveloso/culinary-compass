@@ -1,6 +1,11 @@
-# sword-challenge
 
-This template should help get you started developing with Vue 3 in Vite.
+
+# sword-challenge
+Link to this [DEMO](https://sword-github-discovery.netlify.app/).
+
+
+
+This is my first a project develop in Vue3 
 
 ## Recommended IDE Setup
 
