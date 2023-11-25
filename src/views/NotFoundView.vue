@@ -34,8 +34,8 @@
     gap: 0.8rem;
 
     h1 {
-      font-size: 30px;
-      font-weight: 600;
+      font-size: var(--not_found);
+      font-weight: var(--font_w_bold);
       color: var(--vt-c-purple);
     }
 
@@ -50,7 +50,7 @@
     padding: 0.5rem 1rem;
     min-height: 2.6rem;
     border-radius: 0.25rem;
-    font-weight: 500;
+    font-weight: var(--font_w_regular);
     cursor: pointer;
     transition: ease-in-out 0.2s all;
     overflow: hidden;

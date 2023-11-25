@@ -43,7 +43,7 @@ nav {
   .menu {
     a {
       color: var(--vt-c-orange);
-      font-weight: 500;
+      font-weight: var(--font_w_regular);
       transition: ease-in-out 0.2s all;
       position: relative;
 
@@ -79,7 +79,7 @@ nav {
 
   .btn-nav {
     cursor: pointer;
-    font-weight: 500;
+    font-weight: var(--font_w_regular);
     transition: ease-in-out 0.2s all;
     color: var(--vt-c-purple);
     position: relative;
@@ -133,8 +133,8 @@ nav {
 
     span {
       color: var(--vt-c-purple);
-      font-weight: 600;
-      font-size: 1.2rem;
+      font-weight: var(--font_w_bold);
+      font-size: var(--large_font);
     }
   }
 

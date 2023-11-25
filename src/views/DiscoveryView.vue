@@ -234,8 +234,8 @@ onMounted(() => {
     text-align: center;
 
     h2 {
-      font-weight: 600;
-      font-size: 16px;
+      font-weight: var(--font_w_bold);
+      font-size: var(--large_font);
       color: var(--vt-c-purple);
     }
   }
@@ -243,8 +243,8 @@ onMounted(() => {
 .title-wrapper {
   border-bottom: solid 0.1rem var(--vt-c-purple);
   h1 {
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: var(--font_w_bold);
+    font-size: var(--header_font_small);
     padding: 0.6rem 0;
     color: var(--vt-c-purple);
     width: fit-content;
@@ -274,11 +274,11 @@ onMounted(() => {
   gap: 0.6rem;
   padding: 1rem 0;
   transition: opacity 0.2s ease-in-out;
-  font-size: 13px;
+  font-size: var(--small_font);
 
   span {
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: var(--font_w_bold);
+    font-size: var(--small_font);
   }
 
   select {
@@ -287,7 +287,7 @@ onMounted(() => {
     background: var(--vt-c-black-mute);
     cursor: pointer;
     font-family: inherit;
-    font-size: 14px;
+    font-size: var(--medium_font);
     padding: 0.4rem;
     transition: all 150ms ease;
     min-width: 10.5rem;
@@ -309,7 +309,7 @@ onMounted(() => {
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: var(--font_w_regular);
   padding: 0.6rem 0;
 }
 :deep(.carousel__track) {

@@ -218,13 +218,13 @@ const onChangeEmail = handleSubmit(async () => {
     padding-bottom: 1rem;
 
     h2 {
-      font-size: 18px;
-      font-weight: 500;
+      font-size: var(--xlarge_font);
+      font-weight: var(--font_w_regular);
       color: var(--vt-c-purple);
     }
 
     p {
-      font-size: 14px;
+      font-size: var(--medium_font);
     }
   }
   &-footer {
@@ -243,8 +243,8 @@ main {
 
   h2 {
     color: var(--vt-c-purple);
-    font-size: 22px;
-    font-weight: 600;
+    font-size: var(--header_font);
+    font-weight: var(--font_w_bold);
   }
 
   .create-account {
@@ -252,7 +252,7 @@ main {
     display: flex;
     gap: 0.6rem;
     padding: 1rem 0.5rem;
-    font-size: 14px;
+    font-size: var(--medium_font);
   }
 }
 
@@ -275,8 +275,8 @@ form {
       fill: var(--vt-c-warning);
     }
     span {
-      font-size: 12px;
-      font-weight: 500;
+      font-size: var(--small_font);
+      font-weight: var(--font_w_regular);
     }
   }
 

@@ -46,13 +46,13 @@ function handleClick(chipId: string) {
     padding: 0.2rem 0.8rem;
     border: solid 1.2px var(--vt-c-purple);
     border-radius: 1.6rem;
-    font-weight: 500;
+    font-weight: var(--font_w_regular);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
     span {
       z-index: 3;
-      font-weight: 600;
+      font-weight: var(--font_w_bold);
     }
 
     &::before {

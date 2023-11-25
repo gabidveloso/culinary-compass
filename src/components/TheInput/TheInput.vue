@@ -73,8 +73,8 @@ function getType(attrs: Record<string, any>) {
 
     label {
       color: var(--vt-c-text-1);
-      font-weight: 600;
-      font-size: 12px;
+      font-weight: var(--font_w_bold);
+      font-size: var(--small_font);
     }
 
     input {
@@ -121,7 +121,7 @@ function getType(attrs: Record<string, any>) {
 
   .error-message {
     color: var(--vt-c-error);
-    font-size: 12px;
+    font-size: var(--small_font);
     margin-top: 0.2rem;
   }
 }

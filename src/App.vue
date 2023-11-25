@@ -76,13 +76,13 @@ async function onLogout() {
 
 <style scoped lang="scss">
 h2 {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: var(--xlarge_font);
+  font-weight: var(--font_w_regular);
   color: var(--vt-c-purple);
 }
 
 p {
-  font-size: 14px;
+  font-size: var(--medium_font);
   margin-top: 0.8rem;
 }
 .modal-footer {

@@ -1,5 +1,21 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
+  /* Fonts size */
+  --not_found: 30px;
+  --header_font: ´: 22px;
+  --header_font_small: 20px;
+  --xlarge_font: 18px;
+  --large_font: 16px;
+  --medium_font: 14px;
+  --small_font: 12px;
+
+  /* Font Family */
+  --font_primary: 'Outfit', sans-serif;
+
+  /* Font weight */
+  --font_w_regular: 500;
+  --font_w_bold: 600;
+
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;

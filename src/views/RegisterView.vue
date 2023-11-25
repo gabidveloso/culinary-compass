@@ -119,15 +119,15 @@ main {
 
   h2 {
     color: var(--vt-c-purple);
-    font-size: 22px;
-    font-weight: 600;
+    font-size: var(--header_font);
+    font-weight: var(--font_w_bold);
   }
 
   .create-account {
     display: flex;
     gap: 0.6rem;
     padding: 1rem 0.5rem;
-    font-size: 14px;
+    font-size: var(--medium_font);
   }
 }
 

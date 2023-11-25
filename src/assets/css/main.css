@@ -46,17 +46,10 @@
   position: absolute;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
   color: hsla(237, 100%, 69%, 1);
   transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(44.06deg 99.04% 59.02%);
-  }
 }
 
 @media screen and (max-width: 768px) {
