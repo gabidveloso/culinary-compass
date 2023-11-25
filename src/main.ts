@@ -1,11 +1,11 @@
 import './assets/css/main.css'
 
-import { createApp, defineComponent } from 'vue'
+import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-import { createI18n, useI18n } from 'vue-i18n'
+import { createI18n } from 'vue-i18n'
 import { en, pt } from './i18n'
 
 import { initializeApp } from 'firebase/app'
