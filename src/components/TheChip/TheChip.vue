@@ -35,7 +35,7 @@ function handleClick(chipId: string) {
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.6rem;
 
   .chip {
     display: flex;
@@ -43,8 +43,8 @@ function handleClick(chipId: string) {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding: 0.5rem 2rem;
-    border: solid 2px var(--vt-c-purple);
+    padding: 0.2rem 0.8rem;
+    border: solid 1.2px var(--vt-c-purple);
     border-radius: 1.6rem;
     font-weight: 500;
     cursor: pointer;

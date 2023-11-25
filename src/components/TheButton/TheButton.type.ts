@@ -1,8 +1,6 @@
 export enum THE_BUTTON_VARIANTS {
   PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  TEXT = 'text',
-  DANGER = 'danger'
+  TEXT = 'text'
 }
 
 interface ITheButtonProps {

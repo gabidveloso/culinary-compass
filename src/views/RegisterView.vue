@@ -5,7 +5,10 @@ import TheMessage from '@/components/TheMessage/TheMessage.vue'
 import { RegisterSchema } from '@/schemas/RegisterSchema'
 import { useForm, useField } from 'vee-validate'
 import { THE_BUTTON_VARIANTS } from '@/components/TheButton/TheButton.type'
-import { THE_MESSAGE_VARIANTS } from '@/components/TheMessage/TheMessage.type'
+import {
+  THE_MESSAGE_VARIANTS,
+  type ITheMessageProps
+} from '@/components/TheMessage/TheMessage.type'
 import { useAuthStore } from '@/stores/AuthStore'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
@@ -23,7 +26,7 @@ const { handleSubmit, errorBag } = useForm({
   validationSchema: RegisterSchema
 })
 
-const message = ref({
+const message = ref<ITheMessageProps>({
   show: false,
   variant: THE_MESSAGE_VARIANTS.ERROR,
   message: ''

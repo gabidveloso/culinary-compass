@@ -29,7 +29,7 @@ defineEmits<ITheHeaderEmits>()
       <router-link class="btn-nav" active-class="active" to="/edit-user">{{
         $props.userName
       }}</router-link>
-      <button class="btn-nav" @click="$emit('logout')">{{ $t('header.logout') }}</button>
+      <button class="btn-nav logout" @click="$emit('logout')">{{ $t('header.logout') }}</button>
     </div>
   </nav>
 </template>

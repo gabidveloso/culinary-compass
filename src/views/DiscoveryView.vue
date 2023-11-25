@@ -241,7 +241,7 @@ onMounted(() => {
   }
 }
 .title-wrapper {
-  border-bottom: solid 0.16rem var(--vt-c-purple);
+  border-bottom: solid 0.1rem var(--vt-c-purple);
   h1 {
     font-weight: 600;
     font-size: 20px;
@@ -252,7 +252,7 @@ onMounted(() => {
     position: relative;
     &::before {
       content: '';
-      height: 0.2rem;
+      height: 0.14rem;
       width: 100%;
       background-color: var(--vt-c-purple);
       position: absolute;
@@ -274,6 +274,7 @@ onMounted(() => {
   gap: 0.6rem;
   padding: 1rem 0;
   transition: opacity 0.2s ease-in-out;
+  font-size: 13px;
 
   span {
     font-weight: 600;

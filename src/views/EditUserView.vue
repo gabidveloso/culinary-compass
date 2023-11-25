@@ -248,6 +248,7 @@ main {
   }
 
   .create-account {
+    flex-wrap: wrap;
     display: flex;
     gap: 0.6rem;
     padding: 1rem 0.5rem;
