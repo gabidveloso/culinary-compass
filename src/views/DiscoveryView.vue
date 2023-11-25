@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import TheCard from '@/components/TheCard/TheCard.vue'
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-import TheChip from '@/components/TheChip/TheChip.vue'
-import IconArrow from '@/components/icons/IconArrow.vue'
-import { ref } from 'vue'
-import { useReposStore } from '@/stores/ReposStore/ReposStore'
-import { REPOS_SORT_BY, type IRepoList } from '@/stores/ReposStore/ReposStore.type'
 import { computed } from 'vue'
 import { onMounted } from 'vue'
+import { ref } from 'vue'
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+
+import TheCard from '@/components/TheCard/TheCard.vue'
+import TheChip from '@/components/TheChip/TheChip.vue'
+import IconArrow from '@/components/icons/IconArrow.vue'
+import { useReposStore } from '@/stores/ReposStore/ReposStore'
+import { REPOS_SORT_BY, type IRepoList } from '@/stores/ReposStore/ReposStore.type'
 
 const repoStore = useReposStore()
 

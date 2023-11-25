@@ -52,6 +52,37 @@ a {
   transition: 0.4s;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+  background-color: var(--vt-c-divider-light-2);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: clamp(20rem, 60vw, 25rem);
+  height: auto;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-form {
+  font-size: var(--xlarge_font);
+  font-weight: var(--font_w_regular);
+  color: var(--vt-c-purple);
+}
+
+form .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 @media screen and (max-width: 768px) {
   #app {
     padding: 2rem;

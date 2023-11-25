@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { RouterView, useRouter } from 'vue-router'
 import { useAuthStore } from './stores/AuthStore'
+import { ref } from 'vue'
 
 import { THE_BUTTON_VARIANTS } from './components/TheButton/TheButton.type'
 import TheHeader from './components/TheHeader/TheHeader.vue'
 import TheModal from './components/TheModal/TheModal.vue'
 import TheButton from './components/TheButton/TheButton.vue'
-import { ref } from 'vue'
 import { useReposStore } from './stores/ReposStore/ReposStore'
 
 const authStore = useAuthStore()
@@ -85,6 +85,7 @@ p {
   font-size: var(--medium_font);
   margin-top: 0.8rem;
 }
+
 .modal-footer {
   display: flex;
   justify-content: flex-end;

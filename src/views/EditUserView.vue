@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { updateProfile, type User, getAuth, verifyBeforeUpdateEmail } from 'firebase/auth'
+import { computed, ref } from 'vue'
+
 import TheInput from '@/components/TheInput/TheInput.vue'
 import TheButton from '@/components/TheButton/TheButton.vue'
 import IconWarning from '@/components/icons/IconWarning.vue'
@@ -9,9 +12,6 @@ import { useForm, useField } from 'vee-validate'
 import { THE_BUTTON_VARIANTS } from '@/components/TheButton/TheButton.type'
 import { THE_MESSAGE_VARIANTS } from '@/components/TheMessage/TheMessage.type'
 import { useAuthStore } from '@/stores/AuthStore'
-import { updateProfile, type User, getAuth, verifyBeforeUpdateEmail } from 'firebase/auth'
-
-import { computed, ref } from 'vue'
 
 const authStore = useAuthStore()
 
@@ -165,7 +165,7 @@ const onChangeEmail = handleSubmit(async () => {
     <form @submit="onSubmit">
       <div class="wrapper">
         <div class="title">
-          <h2>{{ $t('myAccount.title') }}</h2>
+          <h2 class="header-form">{{ $t('myAccount.title') }}</h2>
           <span>{{ $t('myAccount.description') }}</span>
         </div>
         <TheMessage
@@ -217,12 +217,6 @@ const onChangeEmail = handleSubmit(async () => {
     gap: 0.2rem;
     padding-bottom: 1rem;
 
-    h2 {
-      font-size: var(--xlarge_font);
-      font-weight: var(--font_w_regular);
-      color: var(--vt-c-purple);
-    }
-
     p {
       font-size: var(--medium_font);
     }
@@ -257,16 +251,6 @@ main {
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: space-between;
-  background-color: var(--vt-c-divider-light-2);
-  border-radius: 0.5rem;
-  padding: 2rem;
-  width: clamp(20rem, 60vw, 25rem);
-  height: auto;
-
   .warning-message {
     display: flex;
     gap: 0.6rem;
@@ -278,12 +262,6 @@ form {
       font-size: var(--small_font);
       font-weight: var(--font_w_regular);
     }
-  }
-
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
   }
 }
 </style>

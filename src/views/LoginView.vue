@@ -1,14 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useForm, useField } from 'vee-validate'
+
 import TheInput from '@/components/TheInput/TheInput.vue'
 import TheButton from '@/components/TheButton/TheButton.vue'
 import TheMessage from '@/components/TheMessage/TheMessage.vue'
 import { LoginSchema } from '@/schemas/LoginSchema'
-import { useForm, useField } from 'vee-validate'
 import { THE_BUTTON_VARIANTS } from '@/components/TheButton/TheButton.type'
 import { useAuthStore } from '@/stores/AuthStore'
-import { useRouter } from 'vue-router'
 import { THE_MESSAGE_VARIANTS } from '@/components/TheMessage/TheMessage.type'
-import { ref } from 'vue'
 
 const authStore = useAuthStore()
 const router = useRouter()
@@ -46,10 +47,10 @@ const onSubmit = handleSubmit(async (values) => {
 </script>
 
 <template>
-  <main>
+  <main class="align-center">
     <form @submit="onSubmit">
       <div class="wrapper">
-        <h2>{{ $t('login.title') }}</h2>
+        <h2 class="header-form">{{ $t('login.title') }}</h2>
         <TheMessage
           v-model:show="message.show"
           :variant="message.variant"
@@ -91,17 +92,7 @@ const onSubmit = handleSubmit(async (values) => {
 
 <style scoped lang="scss">
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   height: calc(100vh - 16rem);
-
-  h2 {
-    color: var(--vt-c-purple);
-    font-size: var(--header_font);
-    font-weight: var(--font_w_bold);
-  }
 
   .create-account {
     flex-wrap: wrap;
@@ -109,24 +100,6 @@ main {
     gap: 0.6rem;
     padding: 1rem 0.5rem;
     font-size: var(--medium_font);
-  }
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  justify-content: space-between;
-  background-color: var(--vt-c-divider-light-2);
-  border-radius: 0.5rem;
-  padding: 2rem;
-  width: clamp(20rem, 60vw, 25rem);
-  height: auto;
-
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
   }
 }
 </style>
