@@ -5,7 +5,7 @@ Link to this [DEMO](https://sword-github-discovery.netlify.app/).
 
 
 
-This is my first a project develop in Vue3 
+This is my first project developed in Vue 3.
 
 ## Recommended IDE Setup
 
