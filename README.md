@@ -1,6 +1,6 @@
 
 
-# sword-challenge
+# Culinary Compass
 Link to this [DEMO](https://sword-github-discovery.netlify.app/).
 
 
