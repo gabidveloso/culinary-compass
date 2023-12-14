@@ -29,6 +29,7 @@ button {
   span {
     position: relative;
     z-index: 1;
+    color: var(--vt-c-white-soft);
   }
 
   &::before {
@@ -38,7 +39,7 @@ button {
     left: 0;
     height: 100%;
     width: 0;
-    box-shadow: inset 0 0 0 60px var(--vt-c-orange);
+    box-shadow: inset 0 0 0 60px var(--vt-c-green);
     transition: ease-in-out 0.2s all;
   }
 
@@ -55,7 +56,7 @@ button {
   }
 
   &.primary {
-    background-color: var(--vt-c-purple);
+    background-color: var(--vt-c-cyan);
 
     &:hover {
       &::before {
@@ -67,7 +68,7 @@ button {
 
   &.text {
     &:hover {
-      color: var(--vt-c-purple);
+      color: var(--vt-c-cyan);
     }
   }
 }

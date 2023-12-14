@@ -11,9 +11,9 @@ defineEmits<ITheHeaderEmits>()
     <div class="left-side">
       <router-link to="/" class="logo-wrapper">
         <img
-          alt="Github Discovery logo"
+          alt="Culinary Compass logo"
           class="logo"
-          src="@/assets/images/github_discovery_logo.png"
+          src="@/assets/images/culinary_compass_logo.png"
         />
         <span>{{ $t('header.appName') }}</span>
       </router-link>
@@ -42,7 +42,7 @@ nav {
 
   .menu {
     a {
-      color: var(--vt-c-orange);
+      color: var(--vt-c-green);
       font-weight: var(--font_w_regular);
       transition: ease-in-out 0.2s all;
       position: relative;
@@ -52,7 +52,7 @@ nav {
         position: absolute;
         bottom: -0.4rem;
         left: calc(50% - 0.15rem);
-        background-color: var(--vt-c-orange);
+        background-color: var(--vt-c-green);
         width: 0.3rem;
         height: 0.3rem;
         border-radius: 50%;
@@ -81,7 +81,7 @@ nav {
     cursor: pointer;
     font-weight: var(--font_w_regular);
     transition: ease-in-out 0.2s all;
-    color: var(--vt-c-purple);
+    color: var(--vt-c-cyan);
     position: relative;
 
     &::before {
@@ -89,7 +89,7 @@ nav {
       position: absolute;
       bottom: -0.4rem;
       left: calc(50% - 0.15rem);
-      background-color: var(--vt-c-orange);
+      background-color: var(--vt-c-green);
       width: 0.3rem;
       height: 0.3rem;
       border-radius: 50%;
@@ -132,7 +132,7 @@ nav {
     }
 
     span {
-      color: var(--vt-c-purple);
+      color: var(--vt-c-cyan);
       font-weight: var(--font_w_bold);
       font-size: var(--large_font);
     }

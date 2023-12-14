@@ -98,6 +98,7 @@ const onSubmit = handleSubmit(async (values) => {
         id="login-button"
         :variant="THE_BUTTON_VARIANTS.PRIMARY"
         type="submit"
+        :area-label="$t('register.submit')"
         :disabled="errorBag.username || errorBag.password || !username || !password"
         >{{ $t('register.submit') }}</TheButton
       >
@@ -113,7 +114,6 @@ const onSubmit = handleSubmit(async (values) => {
 <style scoped lang="scss">
 main {
   height: calc(100vh - 10rem);
-
   .create-account {
     display: flex;
     gap: 0.6rem;

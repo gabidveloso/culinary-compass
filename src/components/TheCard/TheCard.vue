@@ -23,9 +23,10 @@ const showImage = ref(false)
         <IconBookmark />
       </button>
     </div>
-    <a :href="$props.link" class="card-image" target="_blank">
+    <RouterLink :to="$props.link ? $props.link : '/'" class="card-image">
       <img :src="$props.image" @load="showImage = true" alt="card image" />
-    </a>
+      <span>{{ $props.title }}</span>
+    </RouterLink>
   </div>
 </template>
 
@@ -61,6 +62,17 @@ const showImage = ref(false)
     display: flex;
     position: relative;
     min-height: fit-content;
+    flex-direction: column;
+
+    span {
+      position: absolute;
+      padding: 0.2rem 0.4rem;
+      width: 100%;
+      background-color: #ffffff87;
+      color: var(--vt-c-grey);
+      bottom: 0;
+      font-weight: var(--font_w_regular);
+    }
 
     img {
       width: 100%;
@@ -111,8 +123,8 @@ const showImage = ref(false)
         opacity: 1;
         svg {
           :deep(path) {
-            stroke: var(--vt-c-orange);
-            fill: var(--vt-c-orange);
+            stroke: var(--vt-c-green);
+            fill: var(--vt-c-green);
           }
         }
       }

@@ -78,6 +78,7 @@ const onSubmit = handleSubmit(async (values) => {
         :variant="THE_BUTTON_VARIANTS.PRIMARY"
         type="submit"
         :disabled="!meta.valid"
+        :area-label="$t('login.submit')"
       >
         {{ $t('login.submit') }}
       </TheButton>

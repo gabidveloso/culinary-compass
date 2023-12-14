@@ -8,7 +8,7 @@ const i18n = createI18n({
   messages: {
     en: {
       header: {
-        appName: 'Sword Github Discovery'
+        appName: 'Culinary Compass'
       }
     }
   }

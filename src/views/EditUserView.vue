@@ -136,6 +136,7 @@ const onChangeEmail = handleSubmit(async () => {
           :variant="THE_BUTTON_VARIANTS.TEXT"
           type="submit"
           @click="showModal = false"
+          :area-label="$t('myAccount.cancel')"
         >
           {{ $t('myAccount.cancel') }}
         </TheButton>
@@ -146,6 +147,7 @@ const onChangeEmail = handleSubmit(async () => {
           type="submit"
           :disabled="!password"
           @click="onChangeEmail"
+          :area-label="$t('myAccount.changeEmail')"
         >
           {{ $t('myAccount.changeEmail') }}
         </TheButton>
@@ -155,6 +157,7 @@ const onChangeEmail = handleSubmit(async () => {
           :variant="THE_BUTTON_VARIANTS.PRIMARY"
           type="submit"
           @click="showModal = false"
+          :area-label="$t('myAccount.okay')"
         >
           {{ $t('myAccount.okay') }}
         </TheButton>
@@ -199,6 +202,7 @@ const onChangeEmail = handleSubmit(async () => {
         :variant="THE_BUTTON_VARIANTS.PRIMARY"
         type="submit"
         :disabled="!meta.valid || !formChanged"
+        :area-label="$t('myAccount.submit')"
       >
         {{ $t('myAccount.submit') }}</TheButton
       >
@@ -236,7 +240,7 @@ main {
   height: calc(100vh - 16rem);
 
   h2 {
-    color: var(--vt-c-purple);
+    color: var(--vt-c-cyan);
     font-size: var(--header_font);
     font-weight: var(--font_w_bold);
   }

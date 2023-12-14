@@ -11,13 +11,13 @@ import { en, pt } from './i18n'
 import { initializeApp } from 'firebase/app'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDz8jwXNoj9tPxQAtWsjQFjTYB-31H4hzo',
-  authDomain: 'sword-github-discovery.firebaseapp.com',
-  projectId: 'sword-github-discovery',
-  storageBucket: 'sword-github-discovery.appspot.com',
-  messagingSenderId: '714376362317',
-  appId: '1:714376362317:web:98278b789dd8d89eb89f04',
-  measurementId: 'G-ES85FSM045'
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 }
 
 initializeApp(firebaseConfig)

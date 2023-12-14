@@ -13,6 +13,22 @@ const router = createRouter({
     },
 
     {
+      path: '/details/:id',
+      name: 'details',
+      component: () => import('../views/DetailsView.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/discovery',
+      name: 'discovery',
+      component: () => import('../views/DiscoveryView.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/discovery',
       name: 'discovery',
       component: () => import('../views/DiscoveryView.vue'),

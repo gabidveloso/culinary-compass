@@ -7,10 +7,10 @@ import { THE_BUTTON_VARIANTS } from './components/TheButton/TheButton.type'
 import TheHeader from './components/TheHeader/TheHeader.vue'
 import TheModal from './components/TheModal/TheModal.vue'
 import TheButton from './components/TheButton/TheButton.vue'
-import { useReposStore } from './stores/ReposStore/ReposStore'
+import { useFoodStore } from './stores/FoodStore/FoodStore'
 
 const authStore = useAuthStore()
-const reposStore = useReposStore()
+const reposStore = useFoodStore()
 const router = useRouter()
 
 const showModal = ref(false)
@@ -78,7 +78,7 @@ async function onLogout() {
 h2 {
   font-size: var(--xlarge_font);
   font-weight: var(--font_w_regular);
-  color: var(--vt-c-purple);
+  color: var(--vt-c-cyan);
 }
 
 p {

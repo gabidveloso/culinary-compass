@@ -7,26 +7,19 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 import TheCard from '@/components/TheCard/TheCard.vue'
 import TheChip from '@/components/TheChip/TheChip.vue'
-import IconArrow from '@/components/icons/IconArrow.vue'
-import { useReposStore } from '@/stores/ReposStore/ReposStore'
-import { REPOS_SORT_BY, type IRepoList } from '@/stores/ReposStore/ReposStore.type'
+import { useFoodStore } from '@/stores/FoodStore/FoodStore'
+import { type IFoodList } from '@/stores/FoodStore/FoodStore.type'
 
-const repoStore = useReposStore()
+const foodStore = useFoodStore()
 
-repoStore.getRepos()
+foodStore.getData()
 
 const intersectionRef = ref<Element | null>(null)
 const chipsRef = ref<Element | null>(null)
-const options = ref([
-  { text: 'Stars', value: REPOS_SORT_BY.STARS },
-  { text: 'Forks', value: REPOS_SORT_BY.FORKS },
-  { text: 'Help wanted issues', value: REPOS_SORT_BY.ISSUES },
-  { text: 'Updated', value: REPOS_SORT_BY.UPDATED }
-])
 
 const filteredCategories = computed(() => {
-  return repoStore.categories.filter((category) => {
-    return Object.keys(repoStore.repoList).find((key) => {
+  return foodStore.categoriesNames.filter((category) => {
+    return Object.keys(foodStore.foodList).find((key) => {
       return category.value === key && category.active
     })
   })
@@ -41,22 +34,22 @@ const carouselSettings = {
 const carouselBreakpoints = {
   // 650px and up
   650: {
-    itemsToShow: 2,
+    itemsToShow: 3,
     snapAlign: 'start'
   },
   // 700px and up
   700: {
-    itemsToShow: 3,
+    itemsToShow: 4,
     snapAlign: 'start'
   },
   // 900px and up
   900: {
-    itemsToShow: 3,
+    itemsToShow: 4,
     snapAlign: 'start'
   },
   // 1024 and up
   1024: {
-    itemsToShow: 4,
+    itemsToShow: 6,
     snapAlign: 'start'
   }
 }
@@ -82,18 +75,19 @@ onMounted(() => {
     </div>
 
     <carousel
-      v-if="repoStore.bookmarkedRepos.length > 0"
+      v-if="foodStore.bookmarkedFoods.length > 0"
       :settings="carouselSettings"
       :breakpoints="carouselBreakpoints"
     >
-      <slide v-for="repo in repoStore.bookmarkedRepos" :key="repo.id">
+      <slide v-for="food in foodStore.bookmarkedFoods" :key="food.idMeal">
         <div class="carousel__item">
           <TheCard
-            :key="repo.id"
-            :image="`https://opengraph.githubassets.com/123abc/${repo.full_name}`"
-            :link="repo.url"
-            :bookmarked="repoStore.checkedIfBookmarked(repo)"
-            @update:bookmarked="repoStore.setBookmarkedRepo(repo)"
+            :key="food.idMeal"
+            :image="food.strMealThumb"
+            :title="food.strMeal"
+            :link="`details/${food.idMeal}`"
+            :bookmarked="foodStore.checkedIfBookmarked(food)"
+            @update:bookmarked="foodStore.setBookmarkedFood(food)"
           />
         </div>
       </slide>
@@ -104,7 +98,7 @@ onMounted(() => {
       </template>
     </carousel>
   </div>
-  <div v-if="repoStore.bookmarkedRepos.length === 0" class="no-bookmarks">
+  <div v-if="foodStore.bookmarkedFoods.length === 0" class="no-bookmarks">
     <div class="no-bookmarks--text">
       <h2>{{ $t('discovery.noBookmarks') }}</h2>
       <p>{{ $t('discovery.noBookmarksDescription') }}</p>
@@ -114,13 +108,13 @@ onMounted(() => {
   <div class="chips-wrapper">
     <h3>{{ $t('discovery.categoriesDescription') }}</h3>
     <div ref="chipsRef" class="chips">
-      <TheChip :chips="repoStore.categories" />
+      <TheChip :chips="foodStore.categoriesNames" />
     </div>
   </div>
   <Transition name="fade" mode="out-in">
     <div
       class="no-selected-chips"
-      v-if="repoStore.categories.filter((category) => category.active).length === 0"
+      v-if="foodStore.categoriesNames.filter((category) => category.active).length === 0"
     >
       <div class="no-selected-chips--image">
         <img src="@/assets/images/empty-list.png" alt="empty list" />
@@ -137,41 +131,25 @@ onMounted(() => {
       <div class="title-wrapper">
         <h1>{{ $t(`discovery.title${category.value}`) }}</h1>
       </div>
-      <div class="select">
-        <span>{{ $t('discovery.sortBy') }}</span>
-        <select
-          v-model="category.sortBy"
-          @change="repoStore.repoSortBy(category.sortBy, category.value)"
-        >
-          <option
-            v-for="option in options"
-            :key="option.value"
-            :value="option.value"
-            :selected="option.value === category.sortBy"
-          >
-            {{ option.text }}
-          </option>
-        </select>
-        <IconArrow class="arrow" />
-      </div>
 
       <div style="position: relative">
         <carousel
-          v-if="repoStore.repoList[category.value as keyof IRepoList].length > 0"
+          v-if="foodStore.foodList[category.value as keyof IFoodList].length > 0"
           :settings="carouselSettings"
           :breakpoints="carouselBreakpoints"
         >
           <slide
-            v-for="repo in repoStore.repoList[category.value as keyof IRepoList]"
-            :key="repo.id"
+            v-for="food in foodStore.foodList[category.value as keyof IFoodList]"
+            :key="food.idMeal"
           >
             <div class="carousel__item">
               <TheCard
-                :key="repo.id"
-                :image="`https://opengraph.githubassets.com/123abc/${repo.full_name}`"
-                :link="repo.html_url"
-                :bookmarked="repoStore.checkedIfBookmarked(repo)"
-                @update:bookmarked="repoStore.setBookmarkedRepo(repo)"
+                :key="food.idMeal"
+                :image="food.strMealThumb"
+                :title="food.strMeal"
+                :link="`details/${food.idMeal}`"
+                :bookmarked="foodStore.checkedIfBookmarked(food)"
+                @update:bookmarked="foodStore.setBookmarkedFood(food)"
               />
             </div>
           </slide>
@@ -237,17 +215,18 @@ onMounted(() => {
     h2 {
       font-weight: var(--font_w_bold);
       font-size: var(--large_font);
-      color: var(--vt-c-purple);
+      color: var(--vt-c-cyan);
     }
   }
 }
 .title-wrapper {
-  border-bottom: solid 0.1rem var(--vt-c-purple);
+  border-bottom: solid 0.1rem var(--vt-c-cyan);
+  margin-bottom: 1.2rem;
   h1 {
     font-weight: var(--font_w_bold);
     font-size: var(--header_font_small);
     padding: 0.6rem 0;
-    color: var(--vt-c-purple);
+    color: var(--vt-c-cyan);
     width: fit-content;
 
     position: relative;
@@ -255,7 +234,7 @@ onMounted(() => {
       content: '';
       height: 0.14rem;
       width: 100%;
-      background-color: var(--vt-c-purple);
+      background-color: var(--vt-c-cyan);
       position: absolute;
       bottom: 0;
     }
@@ -323,6 +302,12 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+:deep(.carousel__prev),
+:deep(.carousel__next) {
+  background-color: #13aac987;
+  border-radius: 0.4rem;
 }
 
 :deep(.carousel__viewport) {

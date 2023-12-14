@@ -31,6 +31,7 @@ function getType(attrs: Record<string, any>) {
           v-if="$attrs.type === 'password'"
           class="show-password"
           type="button"
+          :area-label="showPassword ? $t('input.hidePassword') : $t('input.showPassword')"
           @click="showPassword = !showPassword"
         >
           <span>{{ showPassword ? $t('input.hidePassword') : $t('input.showPassword') }}</span>
@@ -91,7 +92,7 @@ function getType(attrs: Record<string, any>) {
       bottom: 0;
       position: absolute;
       height: 0.1rem;
-      background-color: var(--vt-c-orange);
+      background-color: var(--vt-c-green);
       transition: all 0.2s ease-in-out;
     }
 
@@ -107,7 +108,7 @@ function getType(attrs: Record<string, any>) {
     &:visited {
       &::before {
         width: 100%;
-        background-color: var(--vt-c-purple);
+        background-color: var(--vt-c-cyan);
       }
     }
 

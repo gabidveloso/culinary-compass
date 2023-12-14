@@ -1,7 +1,7 @@
 import { expect, describe, it, vi, beforeEach } from 'vitest'
 import { setActivePinia, createPinia } from 'pinia'
-import { useReposStore } from '../ReposStore/ReposStore'
-import type { IGitHubRepository } from '../ReposStore/ReposStore.type'
+import { useReposStore } from '../FoodStore/FoodStore'
+import type { IGitHubRepository } from '../FoodStore/FoodStore.type'
 
 // Mock fetch function
 ;(global as any).fetch = vi.fn(() => {

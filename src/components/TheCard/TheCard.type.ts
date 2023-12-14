@@ -2,6 +2,7 @@ interface ITheCardProps {
   image?: string
   link?: string
   bookmarked?: boolean
+  title: string
 }
 
 interface ITheCardEmits {

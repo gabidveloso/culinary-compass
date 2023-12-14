@@ -17,7 +17,7 @@ describe('TheCard.vue', () => {
       messages: {
         en: {
           header: {
-            appName: 'Sword Github Discovery'
+            appName: 'Culinary Compass'
           }
         }
       }

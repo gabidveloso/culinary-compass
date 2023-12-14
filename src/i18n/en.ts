@@ -7,7 +7,7 @@ const home = {
 }
 
 const header = {
-  appName: 'Github Discovery',
+  appName: 'Culinary Compass',
   logout: 'Logout',
   modalTitle: 'Leaving so soon?',
   modalDescription: 'Are you sure you want to log out?',
@@ -85,23 +85,30 @@ const myAccount = {
 
 const discovery = {
   categoriesDescription: 'Toggle topics to show:',
-  titlejavascript: 'Top Javascript',
-  titlevue: 'Top Vue',
-  titlecss: 'Top CSS',
-  titletypescript: 'Top Typescript',
-  titlego: 'Top Go',
-  titlenode: 'Top Node',
-  sortBy: 'Sort by:',
-  emptyListTitle: 'No repositories to show',
-  emptyList: 'There are no repositories to show please select some categories',
-  bookmarkedTitle: 'My bookmarks',
-  noBookmarks: 'No bookmarks added yet',
-  noBookmarksDescription: 'Add repositories to your bookmarks to see them here'
+  titleBeef: 'Beef Recipes',
+  titleChicken: 'Chicken Recipes',
+  titleDessert: 'Dessert Recipes',
+  titleLamb: 'Lamb Recipes',
+  titleMiscellaneous: 'Miscellaneous Recipes',
+  titlePasta: 'Pasta Lovers',
+  titlePork: 'Pork Recipes',
+  titleSeafood: 'By the Sea',
+  titleSide: 'Side Dishes',
+  titleStarter: 'Starters',
+  titleVegan: 'Vegan Recipes',
+  titleVegetarian: 'Vegetarian Recipes',
+  titleBreakfast: 'Breakfast',
+  titleGoat: 'Goat Recipes',
+  emptyListTitle: 'No recipes to show',
+  emptyList: 'There are no recipes to show please select some categories',
+  bookmarkedTitle: 'My favourite recipes',
+  noBookmarks: 'No recipes added as favourite yet',
+  noBookmarksDescription: 'Mark recipes as favourite to see them here.'
 }
 
 const notFound = {
   title: 'Page not found',
-  description: "The page you resquest could not be found. Don't worry and return to home page.",
+  description: "The page you request could not be found. Don't worry and return to home page.",
   goHome: 'Return to home page'
 }
 

@@ -2,7 +2,7 @@
 :root {
   /* Fonts size */
   --not_found: 30px;
-  --header_font: ´: 22px;
+  --header_font: 22px;
   --header_font_small: 20px;
   --xlarge_font: 18px;
   --large_font: 16px;
@@ -27,8 +27,8 @@
 
   --vt-c-indigo: #2c3e50;
 
-  --vt-c-purple: #5f68ff;
-  --vt-c-orange: #fe7f00;
+  --vt-c-cyan: #13aac9;
+  --vt-c-green: #88a823;
   --vt-c-error: #d11d10;
   --vt-c-warning: #d19e10;
   --vt-c-success: #056c30;

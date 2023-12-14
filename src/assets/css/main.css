@@ -23,7 +23,6 @@
 .list-move,
 .list-enter-active,
 .list-leave-active {
-  /* transition: all 2s ease-in-out; */
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
@@ -31,13 +30,11 @@
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  /* transform: scaleY(0.01) translate(30px, 0); */
 }
 
 .list-enter-from img,
 .list-leave-to img {
   opacity: 0;
-  /* transform: scaleY(0.01) translate(30px, 0); */
 }
 
 /* 3. ensure leaving items are taken out of layout flow so that moving
@@ -48,8 +45,24 @@
 
 a {
   text-decoration: none;
-  color: hsla(237, 100%, 69%, 1);
+  position: relative;
+  color: hsl(190.22deg 82.73% 43.14%);
   transition: 0.4s;
+}
+
+.create-account a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0.1rem;
+  bottom: 0;
+  left: 0;
+  background-color: var(--vt-c-cyan);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.create-account a:hover::before {
+  width: 100%;
 }
 
 form {
@@ -74,7 +87,7 @@ form {
 .header-form {
   font-size: var(--xlarge_font);
   font-weight: var(--font_w_regular);
-  color: var(--vt-c-purple);
+  color: var(--vt-c-cyan);
 }
 
 form .wrapper {

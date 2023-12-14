@@ -7,7 +7,7 @@ const home = {
 }
 
 const header = {
-  appName: 'Github Discovery',
+  appName: 'Culinary Compass',
   logout: 'Terminar Sessão',
   modalTitle: 'Já de saída?',
   modalDescription: 'Tem a certeza que deseja terminar a sessão?',
@@ -85,17 +85,25 @@ const myAccount = {
 const discovery = {
   categoriesDescription: 'Selecione as categorias para mostrar:',
   titlejavascript: 'Top Javascript',
-  titlevue: 'Top Vue',
-  titlecss: 'Top CSS',
-  titletypescript: 'Top Typescript',
-  titlego: 'Top Go',
-  titlenode: 'Top Node',
-  sortBy: 'Ordenar por:',
-  emptyListTitle: 'Não há repositórios para mostrar',
-  emptyList: 'Não há repositórios para mostrar, selecione algumas categorias',
-  bookmarkedTitle: 'Os meus favoritos',
-  noBookmarks: 'No bookmarks added yet',
-  noBookmarksDescription: 'Add repositories to your bookmarks to see them here'
+  titleBeef: 'Receitas de Bife',
+  titleChicken: 'Receitas de Frango',
+  titleDessert: 'Sobremesas',
+  titleLamb: 'Receitas de borrego',
+  titleMiscellaneous: 'Receitas Miscelaneas',
+  titlePasta: 'Amantes de Massa',
+  titlePork: 'Receitas de Porco',
+  titleSeafood: 'Receitas de Mar',
+  titleSide: 'Acompanhamentos',
+  titleStarter: 'Entradas',
+  titleVegan: 'Receitas Veganas',
+  titleVegetarian: 'Receitas Vegetarianas',
+  titleBreakfast: 'Pequeno Almoço',
+  titleGoat: 'Receitas de cabra',
+  emptyListTitle: 'Não há receitas para mostrar',
+  emptyList: 'Não há receitas para mostrar, selecione algumas categorias',
+  bookmarkedTitle: 'As minhas receitas favoritas',
+  noBookmarks: 'Sem receitas favoritas',
+  noBookmarksDescription: 'Seleccione receitas como favoritas para visualiza-las aqui'
 }
 
 const notFound = {

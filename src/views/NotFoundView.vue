@@ -36,7 +36,7 @@
     h1 {
       font-size: var(--not_found);
       font-weight: var(--font_w_bold);
-      color: var(--vt-c-purple);
+      color: var(--vt-c-cyan);
     }
 
     p {
@@ -54,7 +54,7 @@
     cursor: pointer;
     transition: ease-in-out 0.2s all;
     overflow: hidden;
-    background-color: var(--vt-c-purple);
+    background-color: var(--vt-c-cyan);
     color: var(--color-background-mute);
 
     &:hover {
