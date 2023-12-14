@@ -1,8 +1,7 @@
 
 
 # Culinary Compass
-Link to this [DEMO](https://sword-github-discovery.netlify.app/).
-
+Link to this [DEMO](https://culinary-compass.netlify.app/).
 
 
 This is my first project developed in Vue 3.
