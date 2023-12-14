@@ -1,6 +1,11 @@
-# sword-challenge
 
-This template should help get you started developing with Vue 3 in Vite.
+
+# Culinary Compass
+Link to this [DEMO](https://sword-github-discovery.netlify.app/).
+
+
+
+This is my first project developed in Vue 3.
 
 ## Recommended IDE Setup
 
