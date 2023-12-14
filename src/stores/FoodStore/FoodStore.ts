@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia'
 import { useStorageAsync } from '@vueuse/core'
 import { ref } from 'vue'
-import { type IFoodList } from './FoodStore.type'
+import { type IFood } from './FoodStore.type'
 import type { IChip } from '@/components/TheChip/TheChip.type'
 
 export const useFoodStore = defineStore('food', () => {
-  const bookmarkedFoods = useStorageAsync<IFoodList[]>('bookmarkedFoods', [])
+  const bookmarkedFoods = useStorageAsync<IFood[]>('bookmarkedFoods', [])
 
   const foodList = ref()
 
@@ -60,7 +60,7 @@ export const useFoodStore = defineStore('food', () => {
     await getRecipes()
   }
 
-  function setBookmarkedFood(food: IFoodList) {
+  function setBookmarkedFood(food: IFood) {
     const hasBookmark = bookmarkedFoods.value.find(
       (bookmarkedFood) => bookmarkedFood.idMeal === food.idMeal
     )
@@ -80,7 +80,7 @@ export const useFoodStore = defineStore('food', () => {
     })
   }
 
-  function checkedIfBookmarked(food: IFoodList) {
+  function checkedIfBookmarked(food: IFood) {
     return bookmarkedFoods.value.some((bookmarkedRepo) => bookmarkedRepo.idMeal === food.idMeal)
   }
 

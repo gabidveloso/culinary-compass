@@ -8,7 +8,7 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import TheCard from '@/components/TheCard/TheCard.vue'
 import TheChip from '@/components/TheChip/TheChip.vue'
 import { useFoodStore } from '@/stores/FoodStore/FoodStore'
-import { type IFoodList } from '@/stores/FoodStore/FoodStore.type'
+import { type IFood } from '@/stores/FoodStore/FoodStore.type'
 
 const foodStore = useFoodStore()
 
@@ -134,12 +134,12 @@ onMounted(() => {
 
       <div style="position: relative">
         <carousel
-          v-if="foodStore.foodList[category.value as keyof IFoodList].length > 0"
+          v-if="foodStore.foodList[category.value as keyof IFood].length > 0"
           :settings="carouselSettings"
           :breakpoints="carouselBreakpoints"
         >
           <slide
-            v-for="food in foodStore.foodList[category.value as keyof IFoodList]"
+            v-for="food in foodStore.foodList[category.value as keyof IFood]"
             :key="food.idMeal"
           >
             <div class="carousel__item">

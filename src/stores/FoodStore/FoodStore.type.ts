@@ -1,4 +1,4 @@
-interface IFoodList {
+interface IFood {
   strMeal: string
   strMealThumb: string
   idMeal: string
@@ -11,4 +11,4 @@ interface ICategoriesNames {
   active: boolean
 }
 
-export type { IFoodList, ICategoriesNames }
+export type { IFood, ICategoriesNames }

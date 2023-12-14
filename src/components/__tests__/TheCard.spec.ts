@@ -9,7 +9,8 @@ describe('TheCard.vue', () => {
     const props = {
       link: 'https://example.com',
       image: 'https://example.com/image.jpg',
-      bookmarked: false
+      bookmarked: false,
+      title: 'Card Title'
     }
 
     const i18n = createI18n({

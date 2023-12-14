@@ -6,8 +6,8 @@ import TheChip from '../TheChip/TheChip.vue'
 describe('TheChip.vue', () => {
   it('renders the chips with correct styles and handles click event', async () => {
     const chips = [
-      { id: '1', label: 'Chip 1', active: false },
-      { id: '2', label: 'Chip 2', active: true }
+      { id: '1', label: 'Chip 1', active: false, value: 'chip1' },
+      { id: '2', label: 'Chip 2', active: true, value: 'chip2' }
     ]
 
     const i18n = createI18n({
