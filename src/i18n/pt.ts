@@ -106,6 +106,12 @@ const discovery = {
   noBookmarksDescription: 'Seleccione receitas como favoritas para visualiza-las aqui'
 }
 
+const detail = {
+  ingredients: 'Ingredientes',
+  preparation: 'Preparação',
+  youtube: 'Veja o video no YouTube'
+}
+
 const notFound = {
   title: 'Página nao encontrada',
   description: 'Esta página não foi encontrada. Por favor, volte para a página inicial.',
@@ -117,4 +123,4 @@ const input = {
   hidePassword: 'Ocultar'
 }
 
-export { home, header, login, input, register, myAccount, discovery, notFound }
+export { home, header, login, input, register, myAccount, discovery, notFound, detail }

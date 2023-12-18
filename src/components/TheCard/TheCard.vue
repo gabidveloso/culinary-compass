@@ -68,7 +68,14 @@ const showImage = ref(false)
       position: absolute;
       padding: 0.2rem 0.4rem;
       width: 100%;
-      background-color: #ffffff87;
+      background-image: linear-gradient(to bottom, rgb(255 255 255 / 2%), rgba(255, 255, 255, 1));
+      // background-color: #ffffff87;
+      // background: rgba(255, 255, 255, 0.2);
+      // border-radius: 8px;
+      // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      // backdrop-filter: blur(5px);
+      // -webkit-backdrop-filter: blur(5px);
+      // border: 1px solid rgba(255, 255, 255, 0.3);
       color: var(--vt-c-grey);
       bottom: 0;
       font-weight: var(--font_w_regular);
